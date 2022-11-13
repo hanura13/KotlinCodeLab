@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,13 +21,16 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         val dice1 = Dice(6)
         val diceroll = dice1.roll()
-        val textDice1: TextView = findViewById(R.id.textView)
-        textDice1.text = diceroll.toString()
+        val luckyNumber = 5
 
-        val dice2 = Dice(6)
-        val diceroll2 = dice2.roll()
-        val textDice2: TextView = findViewById(R.id.textView2)
-        textDice2.text = diceroll2.toString()
+        when(diceroll) {
+            luckyNumber -> Toast.makeText(this, "Got You", Toast.LENGTH_SHORT).show()
+            1 -> Toast.makeText(this, "So sorry! You rolled a 1. Try again!", Toast.LENGTH_SHORT).show()
+            2 -> Toast.makeText(this, "Sadly, you rolled a 2. Try again!", Toast.LENGTH_SHORT).show()
+            3 -> Toast.makeText(this, "Unfortunately, you rolled a 3. Try again!", Toast.LENGTH_SHORT).show()
+            4 -> Toast.makeText(this, "Don't cry! You rolled a 4. Try again!", Toast.LENGTH_SHORT).show()
+            6 -> Toast.makeText(this, "Apologies! You rolled a 6. Try again!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
