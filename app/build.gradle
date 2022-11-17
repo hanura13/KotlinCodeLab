@@ -7,6 +7,9 @@ android {
     namespace 'com.sundev.myapplication'
     compileSdk 32
 
+    buildFeatures{
+        viewBinding = true
+    }
     defaultConfig {
         applicationId "com.sundev.myapplication"
         minSdk 23
