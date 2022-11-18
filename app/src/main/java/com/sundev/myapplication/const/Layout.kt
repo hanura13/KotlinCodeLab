@@ -1,7 +1,7 @@
 package com.sundev.myapplication.const
 
 object Layout {
-    val VERTICAL = 1
-    val HORIZONTAL = 2
-    val GRID = 3
+    const val VERTICAL = 1
+    const val HORIZONTAL = 2
+    const val GRID = 3
 }
