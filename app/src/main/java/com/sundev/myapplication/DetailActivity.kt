@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sundev.myapplication.WordListFragment.Companion.LETTER
 import com.sundev.myapplication.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -15,25 +16,6 @@ class DetailActivity : AppCompatActivity() {
         val binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve the LETTER from the Intent extras
-        // intent.extras.getString returns String? (String or null)
-        // so toString() guarantees that the value will be a String
-        val letterId = intent?.extras?.getString(LETTER).toString()
-
-        val recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = WordAdapter(letterId, this)
-
-        // Adds a [DividerItemDecoration] between items
-        recyclerView.addItemDecoration(
-            DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-        )
-
-        title = getString(R.string.detail_prefix) + " " + letterId
     }
 
-    companion object{
-        const val LETTER = "letter"
-        const val SEARCH_PREFIX = "https://www.google.com/search?q="
-    }
 }
