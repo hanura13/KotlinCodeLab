@@ -16,7 +16,6 @@
 package com.sundev.myapplication
 
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,7 +64,6 @@ class LetterAdapter :
         val item = list.get(position)
         holder.button.text = item.toString()
         holder.button.setOnClickListener {
-            val context = holder.itemView.context
             val action = LetterListFragmentDirections
                 .actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
             holder.view.findNavController().navigate(action)
