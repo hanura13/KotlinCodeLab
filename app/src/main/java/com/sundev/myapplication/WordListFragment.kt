@@ -48,6 +48,8 @@ class WordListFragment : Fragment() {
         const val SEARCH_PREFIX = "https://www.google.com/search?q="
     }
 
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
